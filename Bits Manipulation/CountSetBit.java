@@ -11,21 +11,18 @@ class Solution
 }
 It works! */
 
-class Solution
+class Solution 
 {
-    
-    // Function to find number of bits needed to be flipped to convert A to B
-    public static int countBitsFlip(int a, int b)
+    static int setBits(int N) 
     {
-        int count=0;
-        int XOR=(a^b);
-        while(XOR>0)
-        {
-            count+=XOR&1;
-            XOR=XOR/2;
-        }
-        
-        return count;
+       if(N==0)
+       {
+           return 0;
+       }
+       else
+       {
+           return (N&1)+setBits(N>>1);
+       }
     }
- 
+    
 }
