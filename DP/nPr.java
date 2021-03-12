@@ -12,12 +12,13 @@ static int permutationCoeff(int n,int k)
       
                 
                 else
-                    P[i][j] = P[i - 1][j] + (j * P[i - 1][j - 1]); 
+                    table[i][j] = table[i - 1][j] + (j * table[i - 1][j - 1]); 
       
                 // This step is important  
                 // as P(i,j)=0 for j>i 
-                P[i][j + 1] = 0; 
+                table[i][j + 1] = 0; 
             } 
         } 
-        return P[n][k]; 
-    } 
+        return table[n][k]; 
+    }
+}
